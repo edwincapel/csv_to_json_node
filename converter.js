@@ -13,7 +13,7 @@ const converter = (file) => {
     csv()
     .fromFile(file)
     .then((jsonObj) => {
-        fs.writeFile(path.join(__dirname, 'conversions', `${folderName}.json`), JSON.stringify(jsonObj), (err) => {
+        fs.writeFile(path.join(__dirname, 'conversions', `${folderName}.json`), JSON.stringify(jsonObj,null, 2), (err) => {
             if (err) {
                 console.error(err);
                 return;
